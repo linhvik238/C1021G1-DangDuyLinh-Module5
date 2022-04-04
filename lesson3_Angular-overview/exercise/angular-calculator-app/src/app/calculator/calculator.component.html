@@ -1,0 +1,27 @@
+<h2>Simple Calculator App</h2>
+<table>
+  <tr>
+    <th>First Operand</th>
+    <th>Second Operand</th>
+    <th>Operator</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>
+      <input type="text"  style="size: 25px" [(ngModel)]="firstOperand">
+    </td>
+    <td>
+      <input type="text"  style="size: 50px" [(ngModel)]="secondOperand">
+    </td>
+    <td>
+      <button class="btn btn-success" (click)="addition()">+</button>
+      <button class="btn btn-primary" (click)="subtraction()">-</button>
+      <button class="btn btn-warning" (click)="multiplication()">*</button>
+      <button class="btn btn-danger" (click)="division()">/</button>
+    </td>
+    <td>
+      <input type="text" value="{{result}}">
+    </td>
+  </tr>
+</table>
+<button class="btn btn-success" (click)="calculate()">Calculate</button>
