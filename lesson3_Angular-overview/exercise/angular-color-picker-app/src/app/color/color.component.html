@@ -1,0 +1,26 @@
+<h1>Color Picker</h1>
+
+<table>
+  <tr>
+    <td>Please input your para:</td>
+    <td>
+      <input [style.color]="color" type="text" [(ngModel)]="para">
+    </td>
+  <tr>
+    <td>
+      <select [(ngModel)]="color">
+        <option (click)="changeColor('red')">Red</option>
+        <option (click)="changeColor('black')">Black</option>
+        <option (click)="changeColor('yellow')">Yellow</option>
+        <option (click)="changeColor('blue')">Blue</option>
+        <option (click)="changeColor('white')">White</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Result:</td>
+    <td>
+      <p [style.color]="color">{{para}}</p>
+    </td>
+  </tr>
+</table>
