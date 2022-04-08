@@ -1,0 +1,7 @@
+<h1>Rating bar</h1>
+<ng-container  *ngFor="let rating of ratingUnits" >
+  <button [class.beforeRating]="rating.color=='chocolate'?true:false"
+          [class.afterRating]="rating.color=='hotpink'?true:false"
+          (click)="rate(rating.value)">{{rating.value}}</button>
+</ng-container><br>
+

@@ -1,0 +1,12 @@
+* {
+  padding: 50px;
+  margin: 2px;
+}
+.beforeRating{
+  background: chocolate;
+  padding: 50px;
+}
+.afterRating{
+  background: hotpink;
+  padding: 50px;
+}
