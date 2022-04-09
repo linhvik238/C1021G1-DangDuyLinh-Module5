@@ -1,0 +1,73 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <label for="email">Email</label>
+  <input class="form-control" type="email" id="email" name="email" formControlName="email">
+  <div class="alert-danger" *ngIf="registerForm.controls.email.errors?.required && registerForm.controls.email.touched">
+    Email không được để trống!
+  </div>
+  <div class="alert-danger" *ngIf="registerForm.controls.email.errors?.email && registerForm.controls.email.touched">
+    Không đúng định dạng email!
+  </div>
+
+  <label for="password">Password</label>
+  <input [(ngModel)]="password" class="form-control" type="password" id="password" name="password" formControlName="password">
+  <div class="alert-danger" *ngIf="registerForm.controls.password.errors?.required && registerForm.controls.password.touched">
+    Không được để trống!
+  </div>
+  <div class="alert-danger" *ngIf="registerForm.controls.password.errors?.minlength && registerForm.controls.password.touched">
+    Password phải có ít nhất 6 ký tự!
+  </div>
+
+  <label for="confirmPassword">Confirm Password</label>
+  <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+  <div class="alert-danger" *ngIf="registerForm.controls.confirmPassword.errors.required && registerForm.controls.confirmPassword.touched">
+    Không được để trống!
+  </div>
+  <div class="alert-danger" *ngIf="registerForm.get('confirmPassword').value !== registerForm.get('password').value && registerForm.controls.confirmPassword.touched">
+    Password và confirm Password phải giống nhau!
+  </div>
+
+  <label for="country">Country</label>
+  <select id="country" name="country" formControlName="country">
+    <option value="">Please select</option>
+    <option value="Việt Nam">Việt Nam</option>
+    <option value="Lào">Lào</option>
+    <option value="Campuchia">Campuchia</option>
+  </select>
+  <br>
+  <div class="alert-danger" *ngIf="registerForm.controls.country.errors?.required && registerForm.controls.country.touched">
+    Không được để trống!
+  </div>
+
+  <label for="age">Age</label>
+  <input class="form-control" type="number" id="age" name="age" formControlName="age">
+  <div class="alert-danger" *ngIf="registerForm.controls.age.errors?.required && registerForm.controls.age.touched">
+    Tuổi không được để trống!
+  </div>
+  <div class="alert-danger" *ngIf="registerForm.controls.age.errors?.min && registerForm.controls.age.touched">
+    Tuổi phải lớn hơn 18!
+  </div>
+
+  <label for="gender">Gender </label>
+  <input class="m-3" type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+  <input class="m-3" type="radio" value="female" id="gender0" name="gender" formControlName="gender"> Female
+  <input class="m-3" type="radio" value="other" id="gender2" name="gender" formControlName="gender">Other
+  <div class="alert-danger" *ngIf="registerForm.controls.gender.errors?.required && registerForm.controls.gender.touched">
+    Không được để trống!
+  </div>
+  <br>
+
+  <label for="phone">Phone</label>
+  <input class="form-control" type="number" id="phone" name="phone" formControlName="phone">
+  <div class="alert-danger" *ngIf="registerForm.controls.phone.errors?.required && registerForm.controls.phone.touched">
+    Không được để trống!
+  </div>
+  <div class="alert-danger" *ngIf="registerForm.controls.phone.errors?.pattern && registerForm.controls.phone.touched">
+    Số điện thoại phải đúng định dạng (+84-xxx-xxx-xxx)!
+  </div>
+
+
+  <p>
+    <button class="btn btn-success" [disabled]="registerForm.invalid" type="submit">Submit</button>
+  </p>
+</form>

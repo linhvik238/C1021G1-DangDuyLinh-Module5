@@ -1,0 +1,23 @@
+<h1>Login</h1>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <label for="email">Email</label>
+  <input class="form-control" type="email" id="email" name="email" formControlName="email">
+  <div class="alert-danger" *ngIf="loginForm.controls.email.errors?.required && loginForm.controls.email.touched">
+    Email không được để trống!
+  </div>
+  <div class="alert-danger" *ngIf="loginForm.controls.email.errors?.email && loginForm.controls.email.touched">
+    Không đúng định dạng email!
+  </div>
+  <label for="password">Password</label>
+  <input class="form-control" type="password" id="password" name="password" formControlName="password">
+  <div class="alert-danger" *ngIf="loginForm.controls.password.errors?.required && loginForm.controls.password.touched">
+    Không được để trống!
+  </div>
+  <div class="alert-danger" *ngIf="loginForm.controls.password.errors?.minlength && loginForm.controls.password.touched">
+    Password phải có ít nhất 6 ký tự!
+  </div>
+  <p>
+    <button class="btn btn-success" [disabled]="loginForm.invalid" type="submit">Submit</button>
+  </p>
+</form>
