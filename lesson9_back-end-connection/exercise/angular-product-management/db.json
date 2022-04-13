@@ -1,0 +1,60 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "categoryName": "Benelli"
+    },
+    {
+      "id": 2,
+      "categoryName": "Ducati"
+    },
+    {
+      "id": 3,
+      "categoryName": "Kawasaki Ninja"
+    },
+    {
+      "id": 4,
+      "categoryName": "KTM Duke"
+    }
+  ],
+
+  "product": [
+    {
+      "id": 1,
+      "name": "Benelli 302S",
+      "price": 4800,
+      "category":
+      {
+        "id": 1,
+        "categoryName": "Benelli"
+      }
+    },
+    {
+      "id": 2,
+      "name": "KTM Duke 390",
+      "price": 8500,
+      "category": {
+        "id": 4,
+        "categoryName": "KTM Duke"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Kawasaki Ninja 300",
+      "price": 8000,
+      "category": {
+        "id": 3,
+        "categoryName": "Kawasaki Ninja"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Ducati Monster 795",
+      "price": 18000,
+      "category": {
+        "id": 2,
+        "categoryName": "Ducati"
+      }
+    }
+  ]
+}

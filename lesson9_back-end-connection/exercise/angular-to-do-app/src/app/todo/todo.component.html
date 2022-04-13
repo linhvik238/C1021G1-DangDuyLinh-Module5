@@ -1,0 +1,16 @@
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <form (ngSubmit)="change()" [formGroup]="content" action="" >
+    <input type="text" class="form-control" formControlName="action" [disabled]="content.invalid">
+    <button>Add</button>
+  </form>
+  <p *ngIf="content.get('action').errors.required">error</p>
+  <table>
+    <tr  *ngFor="let todo of todoList; index as i">
+      <td (click)="toggleTodo(i)"  [class.complete]="todo.complete"> {{todo.content}}</td>
+      <td><button (click)="delete(todo.id)">Cancel</button></td>
+    </tr>
+  </table>
+</div>
