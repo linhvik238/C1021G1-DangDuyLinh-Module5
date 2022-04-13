@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <h2 style="color: green; text-align: center">Cập nhập sản phẩm</h2>
+    <form [formGroup]="editForm" (ngSubmit)="editProduct(id)">
+      <table class="table m-auto">
+        <tr>
+        <tr>
+          <td>
+            <label>STT</label>
+            <input  class="form-control" type="text" formControlName="id">
+          </td>
+
+          <td>
+            <label>Name</label>
+            <input class="form-control" type="text" formControlName="name">
+          </td>
+        <tr>
+          <td>
+            <label>Price($)</label>
+            <input class="form-control" type="text" formControlName="price">
+          </td>
+        <tr>
+          <td>
+            <label>Description</label>
+            <input class="form-control" type="text" formControlName="description">
+          </td>
+        </tr>
+        <td><input class="form-control" type="submit" class="btn btn-warning" value="Update"></td>
+      </table>
+    </form>
+  </div>
+</div>
